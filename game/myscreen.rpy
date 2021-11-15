@@ -43,6 +43,7 @@ label travel3:
     return
 
 screen player_ui: 
+    $ healthcount = eebee.cur_hp
     add "gui/stat.png" xalign 1.1 ypos 0.00
     text "[healthcount]" xpos 0.95 ypos 0.010
     add "gui/life_icon.png" xpos 0.93 ypos 0.015

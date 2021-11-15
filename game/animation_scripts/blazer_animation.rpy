@@ -175,7 +175,8 @@ image blazer idle100:
     repeat
 
 
-image blazer attack:
+# image blazer attack:
+image blazer fight:
     "images/blazer/fight/attack/blazer_attack_0001.png"
     0.1
     "images/blazer/fight/attack/blazer_attack_0002.png"

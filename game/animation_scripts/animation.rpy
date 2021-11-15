@@ -116,7 +116,7 @@ image ponipede idle:
     0.1
     repeat
     
-image ponipede attack:
+image ponipede fight:
     "images/mobs/ponipede/attack/ponipede_0001.png"
     0.1
     "images/mobs/ponipede/attack/ponipede_0002.png"
@@ -322,5 +322,3 @@ image snaike fight:
     "images/mobs/snaike/snaike0027.png"
     xalign 0.93 yalign 0.8
     2.0
-    
-    

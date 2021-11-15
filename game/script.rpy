@@ -2,11 +2,6 @@
 define config.layers = ['underlay', 'master', 'transient','itemmap', 'screen1', 'snow1','screens', 'torch', 'ui', 'overlay']
 define res = 0
 
-# name of the character.
-define e = Character(_("Eebee"), color="#00CC00")
-define i = Character(_("Inventory"), color="#cccccc")
-define o = Character(_("oleka"), color="#00CC00")
-define b = Character(_("Blazer"), color="#00CC00")
 # The game starts here.
 
 label start:
@@ -22,7 +17,8 @@ label start2:
 
 menu: 
  "Preview battle system":
-  call battle_game_3 from _call_battle_game_3     
+  call battle_2
+  # call battle_3
  "Preview VN":
   jump start3
     
@@ -253,7 +249,7 @@ menu:
 
 label begin:
     voice "audio/vox/eebee/eebeevoice-12.ogg"
-    $ healthcount -= 10
+    $ eebee.cur_hp -= 10
     e "Ow!"
     show Eebee snowed at Position (xalign = 0.25, yalign = 0.8) with dissolve
     voice "audio/vox/eebee/eebeevoice-13.ogg"
