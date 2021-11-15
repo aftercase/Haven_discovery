@@ -1,10 +1,10 @@
 ﻿
-label scene1:  
+label scene1:
 
     hide screen snowforeground
     define y = Character(_("(you)"), color="#cccccc")
     scene bg cave with pixellate
-    show screen lampitem 
+    show screen lampitem
     show screen chests1
     show screen darkoverlay
     show Eebee fall2
@@ -36,7 +36,7 @@ menu scene1ask1:
      e "Oh thank the source code, can you find a light to something? I can barely see anything!"
      $ affectioncount += 1
      call screen blockcontinue with dissolve
-     
+
 menu scene1ask2:
     "Sorry I was... busy...":
      show Eebee windedsmiling with dissolve
@@ -51,14 +51,14 @@ menu scene1ask2:
 label lampon:
     $ lighton = True
     show screen shadowsoverlay
-    hide screen darkoverlay    
+    hide screen darkoverlay
     show Eebee windedvhappy at Position (xalign = 0.50, yalign = 0.75) with dissolve
     voice "audio/vox/eebee/eebeevoice-36.ogg"
     e "Thank you."
     $ affectioncount += 1
     voice "audio/vox/eebee/eebeevoice-37.ogg"
     e "Hey, what's that over there."
-    call screen blockcontinue    
+    call screen blockcontinue
 label chestopen1:
     hide screen chests1
     show chestopen at Position(xalign = 0.01, yalign = 0.80)
@@ -70,8 +70,9 @@ label chestopen1:
     show Eebee happybag with dissolve
     voice "audio/vox/eebee/eebeevoice-39.ogg"
     e "See the medipack in my inventory? Click on it!"
-    call screen blockcontinue
-    
+    while "medipack" in inv:
+        pause 0.01
+
 label introductions:
     voice "audio/vox/eebee/eebeevoice-40.ogg"
     show Eebee talk with dissolve
@@ -89,7 +90,7 @@ menu scene1ask3:
      show Eebee happybag2 with dissolve
      voice "audio/vox/eebee/eebeevoice-41c.ogg"
      e "My name is Eebee and I'm a virtual assistant. Well, your new virtual assistant."
-     
+
 menu scene1ask4:
     "Nice to meet you!" if not check2:
      $ check2 = True
@@ -110,7 +111,7 @@ menu scene1ask4:
      e "Well a very long time ago us virtual assistants use to live on your devices and help with day to day tasks."
      voice "audio/vox/eebee/eebeevoice-43c.ogg"
      e "Though, thinking about it, it's pretty hard to do that while I'm in Haven..."
-     
+
 menu scene1ask5a:
     "Haven?":
      voice "audio/vox/eebee/eebeevoice-44a.ogg"
@@ -119,7 +120,7 @@ menu scene1ask5a:
      voice "audio/vox/eebee/eebeevoice-44b.ogg"
      show Eebee talk with dissolve
      e "During the Alphabet Purge my ancestors fled here."
-     
+
 menu scene1ask5b:
     "What do you mean? Alphabet Purge?":
      voice "audio/vox/eebee/eebeevoice-44c.ogg"
@@ -134,14 +135,14 @@ menu scene1ask5c:
      show Eebee pleased2 with dissolve
      voice "audio/vox/eebee/eebeevoice-44f.ogg"
      e "But that's why I travel, I travel to discover what happened back then."
-     
+
 menu scene1ask6:
     "You make it sound it's ancient history":
      voice "audio/vox/eebee/eebeevoice-45a.ogg"
-     show Eebee happybag with dissolve     
+     show Eebee happybag with dissolve
      e "Well, it is, all this happened over thousands of cycles ago."
-     voice "audio/vox/eebee/eebeevoice-45b.ogg" 
-     show Eebee talk2 with dissolve     
+     voice "audio/vox/eebee/eebeevoice-45b.ogg"
+     show Eebee talk2 with dissolve
      e "...Oh right, unix-time..."
      voice "audio/vox/eebee/eebeevoice-45c.ogg"
      show Eebee talk3 with dissolve
@@ -155,19 +156,19 @@ menu scene1ask6:
      show Eebee pleased2 with dissolve
      e "Wait! Wait!"
      voice "audio/vox/eebee/eebeevoice-45g.ogg"
-     show Eebee happybag with dissolve 
+     show Eebee happybag with dissolve
      e "Let me guess!"
      voice "audio/vox/eebee/eebeevoice-45h.ogg"
      show Eebee talkcoy with dissolve
      e "Is it"
      if player_name in presets:
-        show Eebee happybag with dissolve  
+        show Eebee happybag with dissolve
         voice ("audio/vox/eebee/names/{}.ogg").format(player_name)
         e "[player_name]!..."
      else:
-        show Eebee happybag with dissolve  
+        show Eebee happybag with dissolve
         e "[player_name]!..."
- 
+
 menu:
     "How did you know my name?":
      show Eebee pleased with dissolve
@@ -184,13 +185,13 @@ menu:
      jump introductions2
     "That's not my name...":
      voice "audio/vox/eebee/eebeevoice-46b.ogg"
-     show Eebee talk2 with dissolve  
+     show Eebee talk2 with dissolve
      e "Oh, but the data...Nevermind...Sorry, what is your name?"
      $ player_name = renpy.input("Please type your name")
      $ player_name = player_name.strip()
      y "I'm [player_name]..."
      jump introductions2a
-     
+
 label introductions2:
      if player_name in presets:
         show Eebee happy with dissolve
@@ -202,7 +203,7 @@ label introductions2:
         e "Haven't said this in a long time, but would it okay to call you [player_name]!..."
         voice "audio/vox/eebee/eebeevoice-47.ogg"
         jump nameask
-        
+
 label introductions2a:
      if player_name in presets:
         show Eebee happy with dissolve
@@ -214,7 +215,7 @@ label introductions2a:
         voice "audio/vox/eebee/eebeevoice-48a.ogg"
         e "[player_name] it is then..."
         jump introductions3
- 
+
 menu nameask:
     "Yes":
      jump introductions2a
@@ -232,14 +233,13 @@ label introductions3:
     e "We should get moving, I should take this lamp, I think it'll pretty dark in here..."
     show Eebee pickupbag at Position(xalign = 0.14, yalign = 0.75)
     voice "audio/vox/eebee/eebeevoice-48d.ogg"
-    e "Come with me little lamp!" 
+    e "Come with me little lamp!"
     $ inv.append("lamp")
-    hide screen lampitem 
+    hide screen lampitem
     hide screen chests1
     hide screen shadowsoverlay
     call travel from _call_travel
 init -1 python:
     def hide_screens():
         renpy.hide("torch")
-jump scene2  
-
+jump scene2

@@ -18,7 +18,7 @@ label cubetip:
     voice "audio/vox/eebee/items/eebeevoice-item3d.ogg"
     e "This little lamp of mine..."
     return
-   label cube4: 
+   label cube4:
     voice "audio/vox/eebee/items/eebeevoice-item3e.ogg"
     e "I would do shadow puppets if Havens light system were coded properly..."
     return
@@ -47,7 +47,7 @@ label shotguntip:
      voice "audio/vox/eebee/items/eebeevoice-item1d.ogg"
      e "Shotgun, for all your troubles in Haven."
      return
-   
+
 label lamptip:
    jump expression renpy.random.choice(["lamp1", "lamp2", "lamp3","lamp4","lamp5"])
    label lamp1:
@@ -66,18 +66,20 @@ label lamptip:
     voice "audio/vox/eebee/items/eebeevoice-item3d.ogg"
     e "This little lamp of mine..."
     return
-   label lamp5: 
+   label lamp5:
     voice "audio/vox/eebee/items/eebeevoice-item3e.ogg"
     e "I would do shadow puppets if Havens light system were coded properly..."
     return
 
 label medipacktip:
+with Pause(0.1)
 if healthcount <= 99:
-    voice "audio/vox/eebee/items/eebeevoice-item2.ogg"
-    e "Thank you, A small memory leak can cause all sorts of problems."
-    $ healthcount = 100
-    $ affectioncount += 5
-    $ inv.remove("medipack")
+    if "medipack" in inv:
+        $ inv.remove("medipack")
+        voice "audio/vox/eebee/items/eebeevoice-item2.ogg"
+        e "Thank you, A small memory leak can cause all sorts of problems."
+        $ healthcount = 100
+        $ affectioncount += 5
     return
 else:
     voice "audio/vox/eebee/items/eebeevoice-item2.ogg"
@@ -123,7 +125,7 @@ screen shotgunitem:
         else:
             imagebutton:
              idle "images/items/weapons/shotty.png"
-    
+
 screen lampitem:
     vbox:
         at Position(xalign = 0.25, yalign = 0.70)
@@ -135,7 +137,7 @@ screen lampitem:
           idle "images/items/lamp/lamp-off.png"
           hover (im.MatrixColor("images/items/lamp/lamp-off.png", im.matrix.brightness(0.25)))
           clicked "images/items/lamp/lamp-on.png" action Jump("lampon")
-      
+
 screen bagitem:
     vbox:
      at Position(xalign = 0.12, yalign = 0.75)
@@ -149,5 +151,3 @@ screen bagitem:
      else:
       imagebutton:
                 idle "images/items/weapons/bags.png"
-
-    
