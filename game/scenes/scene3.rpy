@@ -31,7 +31,7 @@ menu discussion3:
      jump discussion3b
     "So it's like old mythology?":
      show Eebee lampanger with dissolve
-     $ affectioncount -= 5
+     $ eebee_affection(-5)
      e "Myth! It's true! The proof of their existance are dotted all around Haven!"
      e "There's proof right behind me!"
     "[[Continue]":
@@ -40,20 +40,20 @@ menu discussion3:
 
 menu discussion3a:
     "I take it they were Heroes?":
-     $ affectioncount += 2
+     $ eebee_affection(2)
      e "You bet! They kicked flank while saving others!"
      e "Let alone they gathered the sixteen saints to..."
      e "Sorry, I'm rambling..."
      jump discussion3aa
 menu:
     "A big fan then?":
-     $ affectioncount += 3
+     $ eebee_affection(3)
      e "Yuh huh."
      e "Aqua, Coral, Fizz..."
      e "I can only strive to be as awesome as they were..."
     "It's fine, lets talk about something else":
      e "Sure..."
-     $ affectioncount -= 1
+     $ eebee_affection(-1)
      jump discussion3
     "Thank god, it would be a little boring...":
      e "Hey!"
@@ -62,7 +62,7 @@ menu:
      jump discussion3
 menu discussion3aa:
     "We all have our heroes...":
-     $ affectioncount += 1
+     $ eebee_affection(1)
      e "That we do..."
      jump discussion3
 
@@ -87,7 +87,7 @@ menu discussion3c:
      e "A very few has met her in the past"
      e "But she never has been seen in recent memory."
     "So it's like old mythology?":
-     $ affectioncount -= 2
+     $ eebee_affection(-2)
      e "Myth! It's true! The proof of their existance is dotted all around Haven!"
      e "There's proof right behind me!"
 

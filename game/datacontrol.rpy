@@ -101,11 +101,32 @@
             else: # Keep waiting for user input
                 renpy.pause(1)
 
-python:
-    if affectioncount <= 0:
-     affectioncount = 0
-    if olekaaffection <= 0:
-     olekaaffection = 0
+    # Use this instead of changing affection directly to prevent exceeding minimum/maximum
+    def eebee_affection(change):
+        global affectioncount
+        affectioncount += change
+        if (affectioncount > 100):
+            affectioncount = 100
+        elif (affectioncount < 0):
+            affectioncount = 0
+    # Making separate functions for each character makes code simpler and more readable
+    def oleka_affection(change):
+        global olekaaffection
+        olekaaffection += change
+        if (olekaaffection > 100):
+            olekaaffection = 100
+        elif (olekaaffection < 0):
+            olekaaffection = 0
+    #Currently unused
+    def blazer_affection(change):
+        global blazeraffection
+        blazeraffection += change
+        if (blazeraffection > 100):
+            blazeraffection = 100
+        elif (blazeraffection < 0):
+            blazeraffection = 0
+
+
 ## Misc ##
 
 # AI Choice Check - Things AI decides themselves
@@ -122,6 +143,7 @@ default bookcount = 0
 default cryptocount = 0
 default affectioncount = 5
 default olekaaffection = 5
+default blazeraffection = 5
 #Manual data checks- will recode once a better way is found
 default check1 = False
 default check2 = False
