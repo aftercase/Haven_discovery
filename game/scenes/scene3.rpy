@@ -1,9 +1,9 @@
-label scene3:  
+label scene3:
     hide travel
     scene bg cave3 with pixellate
     show screen bookitem1
-    show screen cavelighting  
-    show Eebee lampwonder at Position(xalign = 0.3, yalign = 0.75) with dissolve 
+    show screen cavelighting
+    show Eebee lampwonder at Position(xalign = 0.3, yalign = 0.75) with dissolve
     e "This floor asset has gone on for sometime..."
 menu:
     "What is that behind you?":
@@ -34,9 +34,9 @@ menu discussion3:
      $ affectioncount -= 5
      e "Myth! It's true! The proof of their existance are dotted all around Haven!"
      e "There's proof right behind me!"
-    "[Continue]":
+    "[[Continue]":
      jump moving3
-     
+
 
 menu discussion3a:
     "I take it they were Heroes?":
@@ -66,7 +66,7 @@ menu discussion3aa:
      e "That we do..."
      jump discussion3
 
-     
+
 menu discussion3b:
     "Any clue what happened to her?":
      e "No idea, some in Haven even question if she ever existed."
@@ -77,7 +77,7 @@ menu discussion3b:
      e "Myth! It's true! The proof of their existance is dotted all around Haven!"
      e "There's proof right behind me!"
      jump discussion3
-     
+
 menu discussion3c:
     "What do you know about them?":
      e "Like I said, not much."
@@ -90,7 +90,7 @@ menu discussion3c:
      $ affectioncount -= 2
      e "Myth! It's true! The proof of their existance is dotted all around Haven!"
      e "There's proof right behind me!"
-     
+
 label moving3:
      e "Come on, lets see what else is there!"
      call travel from _call_travel_2

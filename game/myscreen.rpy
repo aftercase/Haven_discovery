@@ -1,6 +1,6 @@
 ﻿screen shadowsoverlay:
     add "images/lightingmaps/cave.png"
-    
+
 screen darkoverlay:
     add "images/lightingmaps/cavedark.png"
 
@@ -42,7 +42,7 @@ label travel3:
     pause(5)
     return
 
-screen player_ui: 
+screen player_ui:
     $ healthcount = eebee.cur_hp
     add "gui/stat.png" xalign 1.1 ypos 0.00
     text "[healthcount]" xpos 0.95 ypos 0.010
@@ -52,16 +52,22 @@ screen player_ui:
     text "[cryptocount]" xpos 0.86 ypos 0.010
     add "gui/coin_icon.png" xpos 0.84 ypos 0.015
     add "gui/opinion_icon.png" xpos 0.67 ypos 0.015
-    bar value VariableValue("affectioncount", 100):
+    bar value StaticValue(affectioncount, 100):
       xpos 0.70 ypos 0.010
       xmaximum 250
       ymaximum 20
       left_bar Frame("gui/barfull.png", 20, 0)
       right_bar Frame("gui/barempy.png", 20, 0)
+#    bar value VariableValue("affectioncount", 100):
+#      xpos 0.70 ypos 0.010
+#      xmaximum 250
+#      ymaximum 20
+#      left_bar Frame("gui/barfull.png", 20, 0)
+#      right_bar Frame("gui/barempy.png", 20, 0)
     text "-debug-" xpos 0.50 ypos 0.015
 
 screen inventory:
-    vbox: 
+    vbox:
         xalign 1.0 ypos 0.058
         add "gui/vstat.png"
     add "gui/inventory.png" xpos 0.94 ypos 0.08
@@ -72,7 +78,7 @@ screen inventory:
     add "gui/inventory.png" xpos 0.94 ypos 0.67
     add "gui/inventory.png" xpos 0.94 ypos 0.79
 
-screen itemdisplay:   
+screen itemdisplay:
     vbox:
      spacing 22
      at Position(xanchor = 0.0,xpos = 0.94, yanchor = 0.0, ypos = 0.08)
