@@ -72,14 +72,15 @@ label lamptip:
     return
 
 label medipacktip:
+$ healthcount = eebee.cur_hp
 with Pause(0.1)
 if healthcount <= 99:
     if "medipack" in inv:
-        $ inv.remove("medipack")
         voice "audio/vox/eebee/items/eebeevoice-item2.ogg"
         e "Thank you, A small memory leak can cause all sorts of problems."
-        $ healthcount = 100
+        $ eebee.cur_hp = 100
         $ affectioncount += 5
+        $ inv.remove("medipack")
     return
 else:
     voice "audio/vox/eebee/items/eebeevoice-item2.ogg"

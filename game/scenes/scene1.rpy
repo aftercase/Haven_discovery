@@ -11,7 +11,7 @@ label scene1:
     voice "audio/vox/eebee/eebeevoice-29.ogg"
     pause 0.8
     e "Oof!..."
-    $ healthcount -= 10
+    $ eebee.cur_hp -= 10
     show Eebee winded3 with dissolve
     voice "audio/vox/eebee/eebeevoice-30.ogg"
     e "...That's going to me a memory leak or two..."

@@ -83,6 +83,8 @@
     oleka  = Party(o, "Oleka", 100, 60, 5, 6)
     blazer = Party(b, "Blazer", 100, 49, 10, 15)
 
+    inv = []
+
 python:
     if affectioncount <= 0:
      affectioncount = 0
