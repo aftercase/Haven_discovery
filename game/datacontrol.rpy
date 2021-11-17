@@ -82,7 +82,7 @@
         def get_affection(self):
             return self._affection
 
-        # Use this method to access character's affection
+        # Use this method to change character's affection
         def set_affection(self, change):
             self._affection += change
             if (self._affection > 100):
@@ -90,12 +90,37 @@
             elif (self._affection < 0):
                 self._affection = 0
 
+
+    class Inventory:
+        def __init__(self):
+            self.items = {}
+            self.busy = False   # Not 100% sure this is needed but I've run into some issues after removing it
+
+        def add_item(self, item):
+            if not self.busy:
+                self.busy = True
+                if item not in self.items:
+                    self.items.__setitem__(item, 1)
+                else:
+                    self.items[item] += 1
+                self.busy = False
+
+        def use_item(self, item):
+            if not self.busy:
+                self.busy = True
+                # The second check prevents bugs in case some code elsewhere didn't remove used item from dict
+                if (item in self.items) and (self.items[item] > 0):
+                    self.items[item] -= 1
+                    if self.items[item] == 0:
+                        self.items.pop(item)
+                self.busy = False
+
     # Define all possible party members here
     eebee  = Party(e, "Eebee", 100, 100, 3, 5)
     oleka  = Party(o, "Oleka", 100, 60, 5, 6)
     blazer = Party(b, "Blazer", 100, 49, 10, 15)
 
-    inv = []
+    inv = Inventory()
 
     _await = False
     def update():

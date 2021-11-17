@@ -66,7 +66,7 @@ label chestopen1:
     e "Oh a chest."
     voice "audio/vox/eebee/eebeevoice-38.ogg"
     e "A medipack? Well, I'm not complaining about convinience."
-    $ inv.append("medipack")
+    $ inv.add_item("medipack")
     show Eebee happybag with dissolve
     voice "audio/vox/eebee/eebeevoice-39.ogg"
     e "See the medipack in my inventory? Click on it!"
@@ -233,7 +233,7 @@ label introductions3:
     show Eebee pickupbag at Position(xalign = 0.14, yalign = 0.75)
     voice "audio/vox/eebee/eebeevoice-48d.ogg"
     e "Come with me little lamp!"
-    $ inv.append("lamp")
+    $ inv.add_item("lamp")
     hide screen lampitem
     hide screen chests1
     hide screen shadowsoverlay
