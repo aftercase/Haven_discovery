@@ -82,6 +82,7 @@
         def get_affection(self):
             return self._affection
 
+        # Use this method to access character's affection
         def set_affection(self, change):
             self._affection += change
             if (self._affection > 100):

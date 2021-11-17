@@ -80,7 +80,6 @@ label medipacktip:
                     e("Thank you, A small memory leak can cause all sorts of problems.")
                     eebee.cur_hp = 100
                     eebee.set_affection(5)
-#                    eebee_affection(5)
                     inv.remove("medipack")
                     break
         else:
