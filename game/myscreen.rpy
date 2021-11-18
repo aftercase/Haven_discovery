@@ -76,7 +76,7 @@ screen itemdisplay:
     vbox:
      spacing 22
      at Position(xanchor = 0.0,xpos = 0.94, yanchor = 0.0, ypos = 0.08)
-     for itemn in inv.items:
+     for itemn in inv.order:
       imagebutton:
        idle ("images/items/item_{}.png").format(itemn)
        hover ("images/items/item_glow_{}.png").format(itemn)

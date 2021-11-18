@@ -95,12 +95,16 @@
         def __init__(self):
             self.items = {}
             self.busy = False   # Not 100% sure this is needed but I've run into some issues after removing it
+            self.ordertotal = 0
+            self.order = []
 
         def add_item(self, item):
             if not self.busy:
                 self.busy = True
                 if item not in self.items:
                     self.items.__setitem__(item, 1)
+                    self.order.append(item)
+                    self.ordertotal += 1
                 else:
                     self.items[item] += 1
                 self.busy = False
@@ -112,7 +116,10 @@
                 if (item in self.items) and (self.items[item] > 0):
                     self.items[item] -= 1
                     if self.items[item] == 0:
+                        #remove the item from both the dict and a list
                         self.items.pop(item)
+                        self.order.remove(item)
+                        self.ordertotal -= 1
                 self.busy = False
 
     # Define all possible party members here
