@@ -34,7 +34,7 @@ menu scene1ask1:
      voice "audio/vox/eebee/eebeevoice-34.ogg"
      show Eebee windedsmiling with dissolve
      e "Oh thank the source code, can you find a light to something? I can barely see anything!"
-     $ affectioncount += 1
+     $ eebee.set_affection(1)
      call screen blockcontinue with dissolve
 
 menu scene1ask2:
@@ -55,7 +55,7 @@ label lampon:
     show Eebee windedvhappy at Position (xalign = 0.50, yalign = 0.75) with dissolve
     voice "audio/vox/eebee/eebeevoice-36.ogg"
     e "Thank you."
-    $ affectioncount += 1
+    $ eebee.set_affection(1)
     voice "audio/vox/eebee/eebeevoice-37.ogg"
     e "Hey, what's that over there."
     call screen blockcontinue
@@ -66,7 +66,7 @@ label chestopen1:
     e "Oh a chest."
     voice "audio/vox/eebee/eebeevoice-38.ogg"
     e "A medipack? Well, I'm not complaining about convinience."
-    $ inv.append("medipack")
+    $ inv.add_item("medipack")
     show Eebee happybag with dissolve
     voice "audio/vox/eebee/eebeevoice-39.ogg"
     e "See the medipack in my inventory? Click on it!"
@@ -79,7 +79,7 @@ label introductions:
 
 menu scene1ask3:
     "Shouldn't you be worring about getting out of here?":
-     $ affectioncount += 1
+     $ eebee.set_affection(1)
      voice "audio/vox/eebee/eebeevoice-41a.ogg"
      show Eebee happybag2 with dissolve
      e "Believe it or not, getting stuck is a common occurence for me. I'll be fine."
@@ -96,7 +96,7 @@ menu scene1ask4:
      voice "audio/vox/eebee/eebeevoice-42.ogg"
      show Eebee pleased2 with dissolve
      e "Nice to meet you too!"
-     $ affectioncount += 3
+     $ eebee.set_affection(3)
      jump scene1ask4
     "Eebee, what do you mean by my virtual assistant?":
      voice "audio/vox/eebee/eebeevoice-43a.ogg"
@@ -218,7 +218,7 @@ label introductions2a:
 menu nameask:
     "Yes":
      jump introductions2a
-     $ affectioncount += 1
+     $ eebee.set_affection(1)
     "No":
      voice "audio/vox/eebee/eebeevoice-48b.ogg"
      e "Then what should I call you?"
@@ -233,7 +233,7 @@ label introductions3:
     show Eebee pickupbag at Position(xalign = 0.14, yalign = 0.75)
     voice "audio/vox/eebee/eebeevoice-48d.ogg"
     e "Come with me little lamp!"
-    $ inv.append("lamp")
+    $ inv.add_item("lamp")
     hide screen lampitem
     hide screen chests1
     hide screen shadowsoverlay

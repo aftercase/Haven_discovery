@@ -64,6 +64,7 @@
         def __init__(self, char, *args):
             super(Party, self).__init__(*args)
             self.char = char
+            self._affection = 0
 
         def idle(self):
             anim_name = 'idle50' if self.cur_hp <= 50 else 'idle100'
@@ -78,12 +79,55 @@
             self.options.cpos = self.options.getpos(stance)
             self.update(anim)
 
+        def get_affection(self):
+            return self._affection
+
+        # Use this method to change character's affection
+        def set_affection(self, change):
+            self._affection += change
+            if (self._affection > 100):
+                self._affection = 100
+            elif (self._affection < 0):
+                self._affection = 0
+
+
+    class Inventory:
+        def __init__(self):
+            self.items = {}
+            self.busy = False   # Not 100% sure this is needed but I've run into some issues after removing it
+            self.ordertotal = 0
+            self.order = []
+
+        def add_item(self, item):
+            if not self.busy:
+                self.busy = True
+                if item not in self.items:
+                    self.items.__setitem__(item, 1)
+                    self.order.append(item)
+                    self.ordertotal += 1
+                else:
+                    self.items[item] += 1
+                self.busy = False
+
+        def use_item(self, item):
+            if not self.busy:
+                self.busy = True
+                # The second check prevents bugs in case some code elsewhere didn't remove used item from dict
+                if (item in self.items) and (self.items[item] > 0):
+                    self.items[item] -= 1
+                    if self.items[item] == 0:
+                        #remove the item from both the dict and a list
+                        self.items.pop(item)
+                        self.order.remove(item)
+                        self.ordertotal -= 1
+                self.busy = False
+
     # Define all possible party members here
     eebee  = Party(e, "Eebee", 100, 100, 3, 5)
     oleka  = Party(o, "Oleka", 100, 60, 5, 6)
     blazer = Party(b, "Blazer", 100, 49, 10, 15)
 
-    inv = []
+    inv = Inventory()
 
     _await = False
     def update():
@@ -101,11 +145,6 @@
             else: # Keep waiting for user input
                 renpy.pause(1)
 
-python:
-    if affectioncount <= 0:
-     affectioncount = 0
-    if olekaaffection <= 0:
-     olekaaffection = 0
 ## Misc ##
 
 # AI Choice Check - Things AI decides themselves
@@ -120,8 +159,6 @@ default okelajoined = True
 default blazerjoined = True
 default bookcount = 0
 default cryptocount = 0
-default affectioncount = 5
-default olekaaffection = 5
 #Manual data checks- will recode once a better way is found
 default check1 = False
 default check2 = False

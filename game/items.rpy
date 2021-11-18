@@ -74,13 +74,13 @@ label lamptip:
 label medipacktip:
     python:
         if eebee.cur_hp <= 99:
-            for item in inv:
+            for item in inv.items:
                 if item == "medipack":
                     voice("audio/vox/eebee/items/eebeevoice-item2.ogg")
                     e("Thank you, A small memory leak can cause all sorts of problems.")
                     eebee.cur_hp = 100
-                    affectioncount += 5
-                    inv.remove("medipack")
+                    eebee.set_affection(5)
+                    inv.use_item("medipack")
                     break
         else:
             voice("audio/vox/eebee/items/eebeevoice-item2.ogg")
@@ -117,7 +117,7 @@ screen bookitem1:
 screen shotgunitem:
     vbox:
         at Position(xalign = 0.5, yalign = 0.8)
-        if "shotgun" in inv:
+        if "shotgun" in inv.items:
            pass
         elif bagfound:
             imagebutton:

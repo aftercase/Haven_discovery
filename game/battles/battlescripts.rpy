@@ -221,7 +221,7 @@ label battle_2_win:
     hide snaike death
     $ cryptocount += 35
     "+35 Crypto's found"
-    $ inv.append("cube")
+    $ inv.add_item("cube")
     "+1 Artifact found"
     pause
     hide screen battle_screen

@@ -1,8 +1,8 @@
 label scene4:  
     hide travel
     scene bg cave4 with pixellate
-    show screen cavelighting  
-    show Eebee lampwonderlook2 at Position(xalign = 0.3, yalign = 0.8) with dissolve 
+    show screen cavelighting
+    show Eebee lampwonderlook2 at Position(xalign = 0.3, yalign = 0.8) with dissolve
     e "*Gasps*"
     show Eebee lampwonderturn with dissolve
     e "Sweet source code! It's...!"
@@ -29,12 +29,12 @@ menu discussion4:
      e "What was that?"
      show Eebee lampwonderlookback2 with hpunch
      e "It's coming from over there! come on [player_name]!"
-     
-label scene4a:       
-    scene bg cave5 with pixellate 
-    show Eebee lampwonderlook2 at Position(xalign = -0.08, yalign = 0.8) with dissolve 
-    show oleka lookup1 at Position(xalign = 0.1, yalign = 0.8) with dissolve 
-    show snaike disabled at Position(xalign = 0.5, yalign = 0.8) with dissolve 
+
+label scene4a:
+    scene bg cave5 with pixellate
+    show Eebee lampwonderlook2 at Position(xalign = -0.08, yalign = 0.8) with dissolve
+    show oleka lookup1 at Position(xalign = 0.1, yalign = 0.8) with dissolve
+    show snaike disabled at Position(xalign = 0.5, yalign = 0.8) with dissolve
     o "Finally! I can see you! Bless TerAD and TempOs for their divine intervention!"
     show snaike blinded
     "*growl*"
@@ -43,5 +43,4 @@ label scene4a:
     e "Huh?"
     o "Don't just stand there! Help me bring this foul beast down!"
     hide Eebee lampwonderlook2
-    call battle_game_2 from _call_battle_game_2  
-
+    call battle_game_2 from _call_battle_game_2
