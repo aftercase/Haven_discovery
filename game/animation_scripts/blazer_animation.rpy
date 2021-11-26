@@ -1,3 +1,32 @@
+image blazer heal:
+    "images/blazer/heal/blazer_0001.png"
+    0.1
+    "images/blazer/heal/blazer_0002.png"
+    0.1
+    "images/blazer/heal/blazer_0003.png"
+    0.1    
+    "images/blazer/heal/blazer_0004.png"
+    0.1    
+    "images/blazer/heal/blazer_0005.png"
+    0.1    
+    "images/blazer/heal/blazer_0006.png"
+    0.1
+    "images/blazer/heal/blazer_0007.png"
+    0.1
+    "images/blazer/heal/blazer_0008.png"
+    0.1    
+    "images/blazer/heal/blazer_0009.png"
+    0.1    
+    "images/blazer/heal/blazer_0010.png"
+    0.1
+    "images/blazer/heal/blazer_0011.png"
+    0.1 
+    "images/blazer/heal/blazer_0012.png"
+    0.1            
+    "images/blazer/heal/blazer_0013.png"
+    0.2
+
+
 image blazer flycyc:
     "images/blazer/flycycle/blazer_0001.png"
     0.1
