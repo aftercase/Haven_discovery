@@ -80,6 +80,7 @@ screen battle_screen:
 
 init python:
     def heal(member, potions):
+        # this is very wrong, "potions" is a local copy of the global "potions_left" variable so reducing it doesn't work
         member.cur_hp = min(member.cur_hp+10, member.max_hp)
         potions -= 1
 
@@ -163,6 +164,7 @@ label battle_2_loop(win, lose):
         while (not check(party_list) and not check(enemies_list)):
             # Ally's Turn
             for index in range(0, len(party_list)):
+                # party_list should for now be defined in the setup for each battle
                 ally = party_list[index]
                 if ally.cur_hp <= 0:
                     continue # Skip turn
@@ -177,14 +179,17 @@ label battle_2_loop(win, lose):
                 if res == "heal":
                     heal(ally, potions_left)
                     ally.say("10hp restored")
+                    ally.to('back')
                 else: # Attack
                     enemy, player_damage = attack(enemies_list, ally)
                     if ally.cur_hp <= 0:
-                        battle_narrator("Take this! (damage dealt - [%s]hp)" % player_damage)
+                        battle_narrator("%s is unconscious!")
                     else:
                         ally.hide() # Show character's turn is consumed
                         ally.show('fight')
                         enemy.show('hurt')
+                        battle_narrator("Take this! (damage dealt - %s hp)" % player_damage)
+                        renpy.pause(1)
                         # renpy.call(renpy.random.choice(["etaunt1", "etaunt2", "etaunt3"]), from_current=True)
                     ally.to('back')
                     if check(enemies_list):
