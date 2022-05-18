@@ -43,4 +43,7 @@ label scene4a:
     e "Huh?"
     o "Don't just stand there! Help me bring this foul beast down!"
     hide Eebee lampwonderlook2
-    call battle_game_2 from _call_battle_game_2
+    #call battle_2
+    show text "Battle Here"
+    with Pause(1.0)
+    

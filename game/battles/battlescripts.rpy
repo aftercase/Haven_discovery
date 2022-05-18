@@ -112,6 +112,7 @@ label battle_2:
     python:
         # Initial Setup
         # Allies and Enemies can be added via party_list.append(Member(...))
+        import time
         party_list = [eebee, oleka]
         potions_left = 10
         players_turn = False
@@ -168,9 +169,9 @@ label battle_2_loop(win, lose):
                     continue # Skip turn
 
                 players_turn = True # Process player input
-                ally.to('front')
+                
                 battle_narrator("%s, it\'s your turn now" % ally.name)
-
+                ally.to('front')
                 res = ui.interact()    # Get player input
                 players_turn = False   # Stop receiving inputs, and process the current action
 
@@ -202,8 +203,7 @@ label battle_2_loop(win, lose):
                     battle_narrator('(%s continues to attack %s)!' % (enemy.name, ally.name))
                 else:
                     ally.show('hurt')
-                    battle_narrator('Rrrrr! (%s dealt %s hp damage to %s)' % (enemy.name, enemy_dmg, ally.name))
-
+                    battle_narrator('Rrrrr! (%s dealt %s hp damage to %s)' % (enemy.name, enemy_dmg, ally.name))     
                 ally.to('back')
                 if check(party_list):
                     break

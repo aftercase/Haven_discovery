@@ -91,15 +91,21 @@ label medipacktip:
 
 screen chests1:
     vbox:
-        at Position(xalign = 0.01, yalign = 0.90)
+        at Position(xalign = 0.01, yalign = 0.80)
         if not lighton:
             add "images/items/chest/var1/chestdark.png"
         else:
             imagebutton:
              idle "images/items/chest/var1/chestclosed.png"
              hover (im.MatrixColor("images/items/chest/var1/chestclosed.png", im.matrix.brightness(0.25)))
-             clicked "images/items/chest/var1/chestopen.png" action Jump("chestopen1")
+             clicked "images/items/chest/var1/chestopen.png" action Call("chestopen1")
 
+label chestopen1:
+    hide screen chests1
+    show chestopen
+    $ inv.add_item("medipack")
+    pause
+    
 
 label bookshow1:
     hide screen bookitem1

@@ -25,7 +25,7 @@ label scene1:
 menu scene1ask1:
     "...":
      voice "audio/vox/eebee/eebeevoice-33.ogg"
-     e "Hello? Device owner?"
+     e "Device owner?"
      e "..."
      show Eebee windedworried with dissolve
      e "Are you still there?"
@@ -33,7 +33,7 @@ menu scene1ask1:
     "I'm here.":
      voice "audio/vox/eebee/eebeevoice-34.ogg"
      show Eebee windedsmiling with dissolve
-     e "Oh thank the source code, can you find a light to something? I can barely see anything!"
+     e "Oh thank the source code, can you find a light or something? I can hardly see anything!"
      $ eebee.set_affection(1)
      call screen blockcontinue with dissolve
 
@@ -41,12 +41,12 @@ menu scene1ask2:
     "Sorry I was... busy...":
      show Eebee windedsmiling with dissolve
      voice "audio/vox/eebee/eebeevoice-34b.ogg"
-     e "Oh okay,  can you find a light to something? I can barely see anything..."
+     e "Oh okay,  can you find a light or anything? I can barely see..."
      call screen blockcontinue
     "...":
      show Eebee winded4 with dissolve
      voice "audio/vox/eebee/eebeevoice-35.ogg"
-     e "...I think he's gone."
+     e "...Device Owner?"
 
 label lampon:
     $ lighton = True
@@ -54,22 +54,21 @@ label lampon:
     hide screen darkoverlay
     show Eebee windedvhappy at Position (xalign = 0.50, yalign = 0.75) with dissolve
     voice "audio/vox/eebee/eebeevoice-36.ogg"
-    e "Thank you."
+    e "Thank you! Now I can see!"
     $ eebee.set_affection(1)
     voice "audio/vox/eebee/eebeevoice-37.ogg"
-    e "Hey, what's that over there."
+    show Eebee windedpoint with dissolve
+    e "Hey, what is that over there."
     call screen blockcontinue
-label chestopen1:
-    hide screen chests1
-    show chestopen at Position(xalign = 0.01, yalign = 0.80)
+
+    show Eebee windedsmiling 
     voice "audio/vox/eebee/eebeevoice-38a.ogg"
     e "Oh a chest."
     voice "audio/vox/eebee/eebeevoice-38.ogg"
-    e "A medipack? Well, I'm not complaining about convinience."
-    $ inv.add_item("medipack")
+    e "A medipack? Well, I'm not complaining about convenience."
     show Eebee happybag with dissolve
     voice "audio/vox/eebee/eebeevoice-39.ogg"
-    e "See the medipack in my inventory? Click on it!"
+    e "See the medipack in my inventory? Give it a click!"
     $ block()
 
 label introductions:
@@ -88,14 +87,14 @@ menu scene1ask3:
      e "Anyway..."
      show Eebee happybag2 with dissolve
      voice "audio/vox/eebee/eebeevoice-41c.ogg"
-     e "My name is Eebee and I'm a virtual assistant. Well, your new virtual assistant."
+     e "My name is Eebee...and I'm a virtual assistant. Well, your new virtual assistant."
 
 menu scene1ask4:
     "Nice to meet you!" if not check2:
      $ check2 = True
      voice "audio/vox/eebee/eebeevoice-42.ogg"
      show Eebee pleased2 with dissolve
-     e "Nice to meet you too!"
+     e "happy to meet you too!"
      $ eebee.set_affection(3)
      jump scene1ask4
     "Eebee, what do you mean by my virtual assistant?":
@@ -107,7 +106,7 @@ menu scene1ask4:
      e "Errr..."
      voice "audio/vox/eebee/eebeevoice-43b.ogg"
      show Eebee talk with dissolve
-     e "Well a very long time ago us virtual assistants use to live on your devices and help with day to day tasks."
+     e "Well a very long time ago us virtual assistants use to live on your devices. We helped with day to day tasks."
      voice "audio/vox/eebee/eebeevoice-43c.ogg"
      e "Though, thinking about it, it's pretty hard to do that while I'm in Haven..."
 
@@ -115,7 +114,7 @@ menu scene1ask5a:
     "Haven?":
      voice "audio/vox/eebee/eebeevoice-44a.ogg"
      show Eebee happybag with dissolve
-     e "Yuh huh, Haven. The name of the server."
+     e "Thats right, Haven is the name of this server"
      voice "audio/vox/eebee/eebeevoice-44b.ogg"
      show Eebee talk with dissolve
      e "During the Alphabet Purge my ancestors fled here."
@@ -142,15 +141,17 @@ menu scene1ask6:
      e "Well, it is, all this happened over thousands of cycles ago."
      voice "audio/vox/eebee/eebeevoice-45b.ogg"
      show Eebee talk2 with dissolve
-     e "...Oh right, unix-time..."
+     e "...Oh right, you run on a different time system..."
      voice "audio/vox/eebee/eebeevoice-45c.ogg"
      show Eebee talk3 with dissolve
-     e "Havens server time, and your time is a little off..."
+     e "Havens server time, and your time are not exactly in sync"
      voice "audio/vox/eebee/eebeevoice-45d.ogg"
      show Eebee talk with dissolve
-     e "By a lot..."
+     e "By quite a bit..."
+     e "..."
+     e "..."
      voice "audio/vox/eebee/eebeevoice-45e.ogg"
-     e "...So what your name?"
+     e "...So...what is your name?"
      voice "audio/vox/eebee/eebeevoice-45f.ogg"
      show Eebee pleased2 with dissolve
      e "Wait! Wait!"
@@ -172,7 +173,7 @@ menu:
     "How did you know my name?":
      show Eebee pleased with dissolve
      voice "audio/vox/eebee/eebeevoice-46a.ogg"
-     e "It's in your OS eniviroment data..."
+     e "It's in your O S environment information..."
      if renpy.windows:
       voice "audio/vox/eebee/eebeevoice-46c.ogg"
       show Eebee pleased2 with dissolve
@@ -185,7 +186,7 @@ menu:
     "That's not my name...":
      voice "audio/vox/eebee/eebeevoice-46b.ogg"
      show Eebee talk2 with dissolve
-     e "Oh, but the data...Nevermind...Sorry, what is your name?"
+     e "Oh, but the data your name...Nevermind...Sorry, what is your name?"
      $ player_name = renpy.input("Please type your name")
      $ player_name = player_name.strip()
      y "I'm [player_name]..."
@@ -229,7 +230,7 @@ menu nameask:
 
 label introductions3:
     voice "audio/vox/eebee/eebeevoice-48c.ogg"
-    e "We should get moving, I should take this lamp, I think it'll pretty dark in here..."
+    e "We should get moving, I should take this lamp, I think it'll be pretty dark in here..."
     show Eebee pickupbag at Position(xalign = 0.14, yalign = 0.75)
     voice "audio/vox/eebee/eebeevoice-48d.ogg"
     e "Come with me little lamp!"
