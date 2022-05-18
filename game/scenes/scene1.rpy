@@ -60,12 +60,14 @@ label lampon:
     show Eebee windedpoint with dissolve
     e "Hey, what is that over there."
     call screen blockcontinue
-
-    show Eebee windedsmiling 
+label chestopen1:
+    hide screen chests1
+    show chestopen at Position(xalign = 0.01, yalign = 0.80)
     voice "audio/vox/eebee/eebeevoice-38a.ogg"
     e "Oh a chest."
     voice "audio/vox/eebee/eebeevoice-38.ogg"
     e "A medipack? Well, I'm not complaining about convenience."
+    $ inv.add_item("medipack")
     show Eebee happybag with dissolve
     voice "audio/vox/eebee/eebeevoice-39.ogg"
     e "See the medipack in my inventory? Give it a click!"
