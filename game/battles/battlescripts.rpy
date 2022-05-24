@@ -79,10 +79,9 @@ screen battle_screen:
                                 text "[enemy_cur_hp] / [enemy_max_hp]" size 16
 
 init python:
-    def heal(member, potions):
-        # this is very wrong, "potions" is a local copy of the global "potions_left" variable so reducing it doesn't work
+    def heal(member):
+        #potions_left can't be decremented here
         member.cur_hp = min(member.cur_hp+10, member.max_hp)
-        potions -= 1
 
     def check(members): # Check for win or lose conditions
         fainted = []
@@ -177,20 +176,18 @@ label battle_2_loop(win, lose):
                 players_turn = False   # Stop receiving inputs, and process the current action
 
                 if res == "heal":
-                    heal(ally, potions_left)
+                    heal(ally)
+                    potions_left -= 1
                     ally.say("10hp restored")
                     ally.to('back')
                 else: # Attack
                     enemy, player_damage = attack(enemies_list, ally)
-                    if ally.cur_hp <= 0:
-                        battle_narrator("%s is unconscious!")
-                    else:
-                        ally.hide() # Show character's turn is consumed
-                        ally.show('fight')
-                        enemy.show('hurt')
-                        battle_narrator("Take this! (damage dealt - %s hp)" % player_damage)
-                        renpy.pause(1)
-                        # renpy.call(renpy.random.choice(["etaunt1", "etaunt2", "etaunt3"]), from_current=True)
+                    ally.hide() # Show character's turn is consumed
+                    ally.show('fight')
+                    enemy.show('hurt')
+                    battle_narrator("Take this! (damage dealt - %s hp)" % player_damage)
+                    renpy.pause(1) # soft pause, can be skipped by clicking
+                    # renpy.call(renpy.random.choice(["etaunt1", "etaunt2", "etaunt3"]), from_current=True)
                     ally.to('back')
                     if check(enemies_list):
                         break
@@ -200,14 +197,22 @@ label battle_2_loop(win, lose):
                 enemy = enemies_list[index]
                 if enemy.cur_hp < 0:
                     continue # Skip turn
+                hp_before_attack = ally.cur_hp
                 ally, enemy_dmg = attack(party_list, enemy)
                 enemy.show('fight')
-                if ally.cur_hp <= 0:
+                if ally.cur_hp <= 0 and hp_before_attack <= 0:
+                    #note that currently (05.24.2022) enemies do not attack knocked out allies
                     ally.show('ko')
                     battle_narrator('(%s continues to attack %s)!' % (enemy.name, ally.name))
+                    renpy.pause(4)
+                elif ally.cur_hp <= 0 and hp_before_attack > 0:
+                    ally.show('ko')
+                    battle_narrator('(%s knocked out %s)!' % (enemy.name, ally.name))
+                    renpy.pause(4)
                 else:
                     ally.show('hurt')
                     battle_narrator('Rrrrr! (%s dealt %s hp damage to %s)' % (enemy.name, enemy_dmg, ally.name))
+                    renpy.pause(4)
 
                 ally.to('back')
                 if check(party_list):

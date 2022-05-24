@@ -44,6 +44,23 @@ image blazer hurt:
     "images/blazer/fight/hurt/blazer_0008.png"
     0.2
 
+image blazer ko:
+    # placeholder animation using ebee assets
+    "images/ebee/fight/ko/eebee-ko0001.png"
+    1.0
+    "images/ebee/fight/ko/eebee-ko0002.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0003.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0004.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0005.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0006.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0001.png"
+    2.0
+
 image blazer flycyc:
     "images/blazer/flycycle/blazer_0001.png"
     0.1
