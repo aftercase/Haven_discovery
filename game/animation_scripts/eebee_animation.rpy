@@ -126,7 +126,7 @@ image eebee walkcyc:
 
 image eebee fight:
     "images/ebee/fight/attack/eebee-fight0001.png"
-    0.1
+    0.2
     "images/ebee/fight/attack/eebee-fight0002.png"
     0.1
     "images/ebee/fight/attack/eebee-fight0003.png"
@@ -139,11 +139,11 @@ image eebee fight:
     "images/ebee/fight/attack/eebee-fight0006.png"
     0.1
     "images/ebee/fight/attack/eebee-fight0007.png"
-    2.0
+    0.8
 
 image eebee hurt:
     "images/ebee/fight/attack/eebee-fight0001.png"
-    1.0
+    0.7
     "images/ebee/fight/hurt/eebee-hurt0002.png"
     0.1
     "images/ebee/fight/hurt/eebee-hurt0003.png"
@@ -158,10 +158,28 @@ image eebee hurt:
     0.1
     "images/ebee/fight/hurt/eebee-hurt0008.png"
     0.1
+    "images/ebee/fight/hurt/eebee-hurt0005.png"
+    0.1
+    "images/ebee/fight/hurt/eebee-hurt0006.png"
+    0.1
+    "images/ebee/fight/hurt/eebee-hurt0007.png"
+    0.1
+    "images/ebee/fight/hurt/eebee-hurt0008.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0005.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0006.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0007.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0008.png"
+    0.1
+    "images/ebee/fight/hurt/eebee-hurt0003.png"
+    0.1
     "images/ebee/fight/hurt/eebee-hurt0002.png"
     0.1
     "images/ebee/fight/hurt/eebee-hurt0001.png"
-    2.0
+    1.6
 
 image eebee ko:
     "images/ebee/fight/ko/eebee-ko0001.png"

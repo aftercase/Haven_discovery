@@ -56,7 +56,7 @@ image glitch dream:
     "images/dreams/glitch/dream_0020.png"
     0.1
     repeat
-    
+
 image ponipede hurt:
     "images/mobs/ponipede/hurt/ponipede_0001.png"
     0.1
@@ -115,7 +115,7 @@ image ponipede idle:
     "images/mobs/ponipede/idle/ponipede_0019.png"
     0.1
     repeat
-    
+
 image ponipede fight:
     "images/mobs/ponipede/attack/ponipede_0001.png"
     0.1
@@ -156,7 +156,7 @@ image ponipede fight:
     0.1
     "images/mobs/ponipede/attack/ponipede_0001.png"
     0.1
-    
+
 image snaike death:
     function play_snaikedie
     "images/mobs/snaike/snaikedeath0001.png"
@@ -193,7 +193,7 @@ image snaike death:
 image snaike hurt:
     "images/mobs/snaike/snaikehurt0001.png"
     xalign 0.93 yalign 0.8
-    1.0
+    0.5
     "images/mobs/snaike/snaikehurt0002.png"
     xalign 0.93 yalign 0.8
     0.1
@@ -211,7 +211,7 @@ image snaike hurt:
     0.1
     "images/mobs/snaike/snaikehurt0001.png"
     xalign 0.93 yalign 0.8
-    1.0
+    0.5
 
 
 image snaike fight:
@@ -321,4 +321,4 @@ image snaike fight:
     0.1
     "images/mobs/snaike/snaike0027.png"
     xalign 0.93 yalign 0.8
-    2.0
+    0.6

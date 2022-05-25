@@ -183,10 +183,12 @@ label battle_2_loop(win, lose):
                 else: # Attack
                     enemy, player_damage = attack(enemies_list, ally)
                     ally.hide() # Show character's turn is consumed
+                    # attack animation is fixed, therefore ally attacks need to take the same total amount of time
+                    # contact with the enemy happens ~0.5s after the animations start
                     ally.show('fight')
                     enemy.show('hurt')
                     battle_narrator("Take this! (damage dealt - %s hp)" % player_damage)
-                    renpy.pause(1) # soft pause, can be skipped by clicking
+                    renpy.pause(1.5) # soft pause, can be skipped by clicking
                     # renpy.call(renpy.random.choice(["etaunt1", "etaunt2", "etaunt3"]), from_current=True)
                     ally.to('back')
                     if check(enemies_list):
@@ -200,6 +202,7 @@ label battle_2_loop(win, lose):
                 hp_before_attack = ally.cur_hp
                 ally, enemy_dmg = attack(party_list, enemy)
                 enemy.show('fight')
+                # contact with the ally happens ~0.8s after the animations start
                 if ally.cur_hp <= 0 and hp_before_attack <= 0:
                     #note that currently (05.24.2022) enemies do not attack knocked out allies
                     ally.show('ko')

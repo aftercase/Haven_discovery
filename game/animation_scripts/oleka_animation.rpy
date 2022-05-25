@@ -33,61 +33,61 @@ image oleka walkcyc:
 
 image oleka fight:
     "images/oleka/fight/attack/oleka0001.png"
-    0.8
+    0.1
     "images/oleka/fight/attack/oleka0002.png"
     0.1
     "images/oleka/fight/attack/oleka0003.png"
     0.1
     "images/oleka/fight/attack/oleka0004.png"
     0.1
-    "images/oleka/fight/attack/oleka0005.png"
-    0.1
     function play_spear
+    "images/oleka/fight/attack/oleka0005.png"
+    0.05
     "images/oleka/fight/attack/oleka0006.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0007.png"
-    0.3
+    0.05
     "images/oleka/fight/attack/oleka0008.png"
-    0.1
-    "images/oleka/fight/attack/oleka0009.png"
-    0.1
-    "images/oleka/fight/attack/oleka0010.png"
-    0.1
-    "images/oleka/fight/attack/oleka0011.png"
-    0.1
-    "images/oleka/fight/attack/oleka0012.png"
-    2.0
+    0.05
+#    "images/oleka/fight/attack/oleka0009.png"
+#    0.05
+#    "images/oleka/fight/attack/oleka0010.png"
+#    0.05
+#    "images/oleka/fight/attack/oleka0011.png"
+#    0.05
+#    "images/oleka/fight/attack/oleka0012.png"
+#    0.1
 
 
     "images/oleka/fight/attack/oleka0001.png"
-    0.8
+    0.05
     "images/oleka/fight/attack/oleka0002.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0003.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0004.png"
-    0.1
-    "images/oleka/fight/attack/oleka0005.png"
-    0.1
+    0.05
     function play_spear
+    "images/oleka/fight/attack/oleka0005.png"
+    0.05
     "images/oleka/fight/attack/oleka0006.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0007.png"
-    0.3
+    0.05
     "images/oleka/fight/attack/oleka0008.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0009.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0010.png"
-    0.1
+    0.05
     "images/oleka/fight/attack/oleka0011.png"
     0.1
     "images/oleka/fight/attack/oleka0012.png"
-    2.0
+    0.1
 
 image oleka hurt:
     "images/oleka/fight/attack/oleka0001.png"
-    1.0
+    0.7
     "images/oleka/fight/hurt/olekahurt0002.png"
     0.1
     "images/oleka/fight/hurt/olekahurt0003.png"
@@ -102,10 +102,28 @@ image oleka hurt:
     0.1
     "images/oleka/fight/hurt/olekahurt0008.png"
     0.1
+    "images/oleka/fight/hurt/olekahurt0005.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0006.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0007.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0008.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0005.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0006.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0007.png"
+    0.1
+    "images/oleka/fight/hurt/olekahurt0008.png"
+    0.1
     "images/oleka/fight/hurt/olekahurt0003.png"
     0.1
+    "images/oleka/fight/hurt/olekahurt0002.png"
+    0.1
     "images/oleka/fight/attack/oleka0001.png"
-    2.0
+    1.6
 
 image oleka ko:
     # placeholder animation using ebee assets
