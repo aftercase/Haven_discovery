@@ -1,48 +1,65 @@
 image blazer heal:
-    "images/blazer/heal/blazer_0001.png"
+    "images/blazer/fight/heal/blazer_0001.png"
     0.1
-    "images/blazer/heal/blazer_0002.png"
+    "images/blazer/fight/heal/blazer_0002.png"
     0.1
-    "images/blazer/heal/blazer_0003.png"
-    0.1    
-    "images/blazer/heal/blazer_0004.png"
-    0.1    
-    "images/blazer/heal/blazer_0005.png"
-    0.1    
-    "images/blazer/heal/blazer_0006.png"
+    "images/blazer/fight/heal/blazer_0003.png"
     0.1
-    "images/blazer/heal/blazer_0007.png"
+    "images/blazer/fight/heal/blazer_0004.png"
     0.1
-    "images/blazer/heal/blazer_0008.png"
-    0.1    
-    "images/blazer/heal/blazer_0009.png"
-    0.1    
-    "images/blazer/heal/blazer_0010.png"
+    "images/blazer/fight/heal/blazer_0005.png"
     0.1
-    "images/blazer/heal/blazer_0011.png"
-    0.1 
-    "images/blazer/heal/blazer_0012.png"
-    0.1            
-    "images/blazer/heal/blazer_0013.png"
+    "images/blazer/fight/heal/blazer_0006.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0007.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0008.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0009.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0010.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0011.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0012.png"
+    0.1
+    "images/blazer/fight/heal/blazer_0013.png"
     0.2
 
 image blazer hurt:
-    "images/blazer/hurt/blazer_0001.png"
+    "images/blazer/fight/hurt/blazer_0001.png"
     0.1
-    "images/blazer/hurt/blazer_0002.png"
+    "images/blazer/fight/hurt/blazer_0002.png"
     0.1
-    "images/blazer/hurt/blazer_0003.png"
-    0.1    
-    "images/blazer/hurt/blazer_0004.png"
-    0.1    
-    "images/blazer/hurt/blazer_0005.png"
-    0.1    
-    "images/blazer/hurt/blazer_0006.png"
+    "images/blazer/fight/hurt/blazer_0003.png"
     0.1
-    "images/blazer/hurt/blazer_0007.png"
+    "images/blazer/fight/hurt/blazer_0004.png"
     0.1
-    "images/blazer/hurt/blazer_0008.png"
+    "images/blazer/fight/hurt/blazer_0005.png"
+    0.1
+    "images/blazer/fight/hurt/blazer_0006.png"
+    0.1
+    "images/blazer/fight/hurt/blazer_0007.png"
+    0.1
+    "images/blazer/fight/hurt/blazer_0008.png"
     0.2
+
+image blazer ko:
+    # placeholder animation using ebee assets
+    "images/ebee/fight/ko/eebee-ko0001.png"
+    1.0
+    "images/ebee/fight/ko/eebee-ko0002.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0003.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0004.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0005.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0006.png"
+    0.1
+    "images/ebee/fight/ko/eebee-ko0001.png"
+    2.0
 
 image blazer flycyc:
     "images/blazer/flycycle/blazer_0001.png"
@@ -50,23 +67,23 @@ image blazer flycyc:
     "images/blazer/flycycle/blazer_0002.png"
     0.1
     "images/blazer/flycycle/blazer_0003.png"
-    0.1    
+    0.1
     "images/blazer/flycycle/blazer_0004.png"
-    0.1    
+    0.1
     "images/blazer/flycycle/blazer_0005.png"
-    0.1    
+    0.1
     "images/blazer/flycycle/blazer_0006.png"
     0.1
     "images/blazer/flycycle/blazer_0007.png"
     0.1
     "images/blazer/flycycle/blazer_0008.png"
-    0.1    
+    0.1
     "images/blazer/flycycle/blazer_0009.png"
-    0.1    
+    0.1
     "images/blazer/flycycle/blazer_0010.png"
     0.1
     "images/blazer/flycycle/blazer_0010.png"
-    0.1            
+    0.1
     repeat
 
 image blazer idle50:
@@ -88,7 +105,7 @@ image blazer idle50:
      "images/blazer/fight/idle/50/idle_50_0008.png"
      0.1
      "images/blazer/fight/idle/50/idle_50_0009.png"
-    choice:     
+    choice:
      "images/blazer/fight/idle/50/idle_50_0010.png"
      0.1
      "images/blazer/fight/idle/50/idle_50_0011.png"
@@ -106,7 +123,7 @@ image blazer idle50:
      "images/blazer/fight/idle/50/idle_50_0017.png"
      0.1
      "images/blazer/fight/idle/50/idle_50_0018.png"
-    choice:     
+    choice:
      "images/blazer/fight/idle/50/idle_50_0019.png"
      0.1
      "images/blazer/fight/idle/50/idle_50_0020.png"
@@ -151,23 +168,23 @@ image blazer idle100:
      "images/blazer/fight/idle/100/blazer_idle_100_0002.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0003.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0004.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0005.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0006.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0007.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0008.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0009.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0010.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0011.png"
-     0.1  
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0012.png"
      0.1
     choice:
@@ -176,48 +193,48 @@ image blazer idle100:
      "images/blazer/fight/idle/100/blazer_idle_100_0014.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0015.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0016.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0017.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0018.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0019.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0020.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0021.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0022.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0023.png"
-     0.1  
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0024.png"
-     0.1     
+     0.1
     choice:
      "images/blazer/fight/idle/100/blazer_idle_100_0025.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0026.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0027.png"
-     0.1      
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0004.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0005.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0006.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0007.png"
-     0.1    
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0008.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0009.png"
-     0.1  
+     0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0010.png"
      0.1
      "images/blazer/fight/idle/100/blazer_idle_100_0011.png"
-     0.1          
+     0.1
     repeat
 
 
@@ -229,19 +246,19 @@ image blazer fight:
     0.1
     function play_rocket
     "images/blazer/fight/attack/blazer_attack_0003.png"
-    0.1    
+    0.1
     "images/blazer/fight/attack/blazer_attack_0004.png"
-    0.1    
+    0.1
     "images/blazer/fight/attack/blazer_attack_0005.png"
-    0.1    
+    0.1
     "images/blazer/fight/attack/blazer_attack_0006.png"
     0.1
     "images/blazer/fight/attack/blazer_attack_0007.png"
     0.1
     "images/blazer/fight/attack/blazer_attack_0008.png"
-    0.1    
+    0.1
     "images/blazer/fight/attack/blazer_attack_0009.png"
-    0.1    
+    0.1
     "images/blazer/fight/attack/blazer_attack_0010.png"
     0.1
     "images/blazer/fight/attack/blazer_attack_0011.png"
