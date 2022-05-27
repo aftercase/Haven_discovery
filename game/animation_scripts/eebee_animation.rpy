@@ -166,13 +166,13 @@ image eebee hurt:
     0.1
     "images/ebee/fight/hurt/eebee-hurt0008.png"
     0.1
-    "images/oleka/fight/hurt/olekahurt0005.png"
+    "images/ebee/fight/hurt/eebee-hurt0005.png"
     0.1
-    "images/oleka/fight/hurt/olekahurt0006.png"
+    "images/ebee/fight/hurt/eebee-hurt0006.png"
     0.1
-    "images/oleka/fight/hurt/olekahurt0007.png"
+    "images/ebee/fight/hurt/eebee-hurt0007.png"
     0.1
-    "images/oleka/fight/hurt/olekahurt0008.png"
+    "images/ebee/fight/hurt/eebee-hurt0008.png"
     0.1
     "images/ebee/fight/hurt/eebee-hurt0003.png"
     0.1
@@ -196,6 +196,11 @@ image eebee ko:
     0.1
     "images/ebee/fight/ko/eebee-ko0001.png"
     2.0
+
+image eebee defeated:
+    "images/ebee/fight/ko/eebee-ko0001.png"
+    1.0
+    repeat
 
 image eebee idle100:
     choice:

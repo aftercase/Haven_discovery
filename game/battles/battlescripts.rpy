@@ -208,16 +208,20 @@ label battle_2_loop(win, lose):
                     ally.show('ko')
                     battle_narrator('(%s continues to attack %s)!' % (enemy.name, ally.name))
                     renpy.pause(4)
+                    ally.show('defeated')
                 elif ally.cur_hp <= 0 and hp_before_attack > 0:
                     ally.show('ko')
                     battle_narrator('(%s knocked out %s)!' % (enemy.name, ally.name))
                     renpy.pause(4)
+                    ally.show('defeated')
                 else:
                     ally.show('hurt')
                     battle_narrator('Rrrrr! (%s dealt %s hp damage to %s)' % (enemy.name, enemy_dmg, ally.name))
                     renpy.pause(4)
 
                 ally.to('back')
+                if ally.cur_hp <= 0:
+                    ally.show('defeated')
                 if check(party_list):
                     break
 

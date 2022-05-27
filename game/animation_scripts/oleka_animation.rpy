@@ -142,6 +142,12 @@ image oleka ko:
     "images/ebee/fight/ko/eebee-ko0001.png"
     2.0
 
+image oleka defeated:
+    # placeholder using ebee assets
+    "images/ebee/fight/ko/eebee-ko0001.png"
+    1.0
+    repeat
+
 image oleka idle100:
     choice:
      "images/oleka/fight/idle/100/oleka-idle-100_0001.png"
